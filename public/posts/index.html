@@ -13,7 +13,7 @@
 
 
 
-    <title>Posts | </title>
+    <title>Posts | DEV Nook</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -36,6 +36,7 @@
     property="og:title"
     content="Posts"
   />
+  <meta property="og:site_name" content="DEV Nook" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/posts/" />
 
@@ -137,11 +138,11 @@
     
       <label for="menu-control" class="gdoc-nav__control" tabindex="0">
         <svg class="gdoc-icon gdoc_menu">
-          <title>Open Navigation</title>
+          <title>打开导航</title>
           <use xlink:href="#gdoc_menu"></use>
         </svg>
         <svg class="gdoc-icon gdoc_arrow_back">
-          <title>Close Navigation</title>
+          <title>关闭导航</title>
           <use xlink:href="#gdoc_arrow_back"></use>
         </svg>
       </label>
@@ -154,7 +155,7 @@
             src="/brand.svg"
             alt=""
           />
-          <span class="gdoc-brand__title"></span>
+          <span class="gdoc-brand__title">DEV Nook</span>
         </span>
       </a>
     </div>
@@ -165,15 +166,15 @@
 
         <span id="gdoc-color-theme">
           <svg class="gdoc-icon gdoc_brightness_dark">
-            <title>Toggle Dark/Light/Auto mode</title>
+            <title>切换暗/亮/自动模式</title>
             <use xlink:href="#gdoc_brightness_dark"></use>
           </svg>
           <svg class="gdoc-icon gdoc_brightness_light">
-            <title>Toggle Dark/Light/Auto mode</title>
+            <title>切换暗/亮/自动模式</title>
             <use xlink:href="#gdoc_brightness_light"></use>
           </svg>
           <svg class="gdoc-icon gdoc_brightness_auto">
-            <title>Toggle Dark/Light/Auto mode</title>
+            <title>切换暗/亮/自动模式</title>
             <use xlink:href="#gdoc_brightness_auto"></use>
           </svg>
         </span>
@@ -181,7 +182,7 @@
         <span class="gdoc-menu-header__home">
           <a href="" class="gdoc-header__link">
             <svg class="gdoc-icon gdoc_home">
-              <title>Back to homepage</title>
+              <title>返回首页</title>
               <use xlink:href="#gdoc_home"></use>
             </svg>
           </a>
@@ -195,7 +196,7 @@
           <label for="menu-header-control">
             <svg class="gdoc-icon gdoc_keyboard_arrow_right">
               <use xlink:href="#gdoc_keyboard_arrow_right"></use>
-              <title>Close Menu Bar</title>
+              <title>关闭菜单栏</title>
             </svg>
           </label>
         </span>
@@ -203,7 +204,7 @@
       <label for="menu-header-control" class="gdoc-menu-header__control">
         <svg class="gdoc-icon gdoc_keyboard_arrow_left">
           <use xlink:href="#gdoc_keyboard_arrow_left"></use>
-          <title>Open Menu Bar</title>
+          <title>打开菜单栏</title>
         </svg>
       </label>
     </div>
@@ -223,8 +224,8 @@
       type="text"
       id="gdoc-search-input"
       class="gdoc-search__input"
-      placeholder="Search..."
-      aria-label="Search"
+      placeholder="搜索..."
+      aria-label="搜索"
       maxlength="64"
       data-site-base-url=""
       data-site-lang="en"
@@ -236,7 +237,7 @@
 
 
   <section class="gdoc-nav--main">
-    <h2>Navigation</h2>
+    <h2>导航</h2>
     
       
 
@@ -315,7 +316,43 @@
               
                 <span class="flex">
                   <a
-                    href="/posts/my-first-post/"
+                    href="/1/01/"
+                    class="gdoc-nav__entry"
+                  >
+                    图片测试
+                  </a>
+                </span>
+              
+              
+            </label>
+
+            
+          </li>
+        
+      
+        
+          
+          
+          
+          
+          
+          
+
+
+          <li>
+            <input
+              type="checkbox"
+              
+                class="hidden"
+              
+            />
+            <label
+              
+            >
+              
+                <span class="flex">
+                  <a
+                    href="/2022/11/netty%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
                     class="gdoc-nav__entry"
                   >
                     Netty学习笔记
@@ -365,7 +402,7 @@
     <article class="gdoc-markdown gdoc-post">
       <header class="gdoc-post__header">
         <h1 class="gdoc-post__title">
-          <a href="/posts/my-first-post/">Netty学习笔记</a>
+          <a href="/2022/11/netty%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Netty学习笔记</a>
         </h1>
       </header>
       <section>
@@ -380,16 +417,16 @@
 线程数量增长问题： 在BIO模型中，每个客户端连接都需要一个独立的线程来处理，即使客户端没有实际的IO操作。当有大量客户端连接时，就会创建大量线程，这会占用大量系统资源，而且线程切换也会带来额外的开销。这种线程数量增长问题称为&quot;线程爆炸&quot;。 阻塞等待问题： 在BIO模型中，当一个线程在执行IO操作时，它会一直阻塞等待，直到IO操作完成或超时。这导致线程在等待IO时无法被释放出来，从而无法处理其他客户端连接。如果IO操作耗时较长，就会导致大量线程被阻塞，造成资源浪费和性能下降。 在NIO模型中，快递公司可以引入一个号码排队系统，让顾客自行取号，然后在大屏幕上显示当前叫号的号码。在这里，快递公司可以将号码排队系统看作是选择器（Selector），大屏幕上显示的号码就是已就绪的通道（快递员）。
 启动： 快递公司（服务器）打开营业窗口，创建一个选择器（Selector）来管理客户端连接。 快递公司（服务器）启动多个快递员线程（Reactor线程），这些快递员线程会不断轮询选择器，处理就绪的通道（已取号的顾客）。 顾客（客户端）到达： 当有顾客（客户端）到达快递公司（服务器），他们先取一个号码（注册到选择器），然后可以自由活动，不需要一直等待。 快递公司的大屏幕（选择器）会显示当前叫号的号码（已就绪的通道）。 快递员处理： 每个快递员线程会不断地从选择器中获取已就绪的通道（已取号的顾客）。 当一个通道（快递员）处于就绪状态（有客户需要处理）时，快递员线程会立即处理该通道的（已取号的顾客）快递业务，这可能包括读取快递信息、写入快递信息等。 快递员轮询选择器： 当一个快递员处理完一个通道的业务后，会立即返回选择器，查看是否有其他通道已经就绪。 如果有其他通道已就绪，则立即处理该通道的业务，如果没有就绪的通道，则快递员线程会在选择器上阻塞，等待新的通道就绪，以避免空闲等待。 通过使用NIO模型，快递公司可以高效地利用每个快递员的时间，避免了快递员一直等待，提高了服务效率。类似地，在NIO模型中，服务器通过一个线程处理多个客户端连接的IO操作，避免了线程数量增长和阻塞等待问题，提高了并发性能和响应能力。
 总结：在NIO模型中，快递公司通过号码排队系统和快递员的智能调度，提高了服务效率，减少了资源浪费，类似地，在NIO模型中，服务器通过选择器和快递员线程的智能调度，提高了并发性能，充分利用系统资源。
-启动Netty服务端 public class Server { public static void main(String[] args) { /** * 三部曲:线程模型 io模型 读写处理逻辑 */ ServerBootstrap serverBootstrap = new ServerBootstrap(); // ========= 第一步:线程模型 ==================== // 负责处理新连接的线程组:类似老板，不做事，只负责接活 NioEventLoopGroup boss = new NioEventLoopGroup(); // 负责数据读写的线程组:类似员工，当老板接活后，交给员工去做 NioEventLoopGroup works = new NioEventLoopGroup(); // 服务端启动引导类配置 serverBootstrap.
+二.启动Netty服务端 public class Server { public static void main(String[] args) { /** * 三部曲:线程模型 io模型 读写处理逻辑 */ ServerBootstrap serverBootstrap = new ServerBootstrap(); // ========= 第一步:线程模型 ==================== // 负责处理新连接的线程组:类似老板，不做事，只负责接活 NioEventLoopGroup boss = new NioEventLoopGroup(); // 负责数据读写的线程组:类似员工，当老板接活后，交给员工去做 NioEventLoopGroup works = new NioEventLoopGroup(); // 服务端启动引导类配置 serverBootstrap.
       </section>
       <div class="gdoc-post__readmore">
         
           <a
             class="flex-inline align-center fake-link"
-            title="Read full post"
-            href="/posts/my-first-post/"
+            title="阅读全文"
+            href="/2022/11/netty%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
           >
-            Read full post
+            阅读全文
             <i class="gdoc-icon">gdoc_arrow_right_alt</i>
           </a>
         
@@ -409,7 +446,46 @@
 
 <span class="flex align-center no-wrap">
   <svg class="gdoc-icon gdoc_timer"><use xlink:href="#gdoc_timer"></use></svg>
-  <span class="gdoc-post__tag">One minute to read</span>
+  <span class="gdoc-post__tag">一分钟阅读时间</span>
+</span>
+
+
+
+
+
+
+        </div>
+      </footer>
+    </article>
+  
+    <article class="gdoc-markdown gdoc-post">
+      <header class="gdoc-post__header">
+        <h1 class="gdoc-post__title">
+          <a href="/1/01/">图片测试</a>
+        </h1>
+      </header>
+      <section>
+        
+      </section>
+      <div class="gdoc-post__readmore">
+        
+      </div>
+
+      <footer class="gdoc-post__footer">
+        <div class="flex flex-wrap align-center gdoc-post__meta">
+          <span class="flex align-center no-wrap">
+  <svg class="gdoc-icon gdoc_date"><use xlink:href="#gdoc_date"></use></svg>
+  <span class="gdoc-post__tag">
+    <time datetime="0001-01-01T00:00:00Z">
+      
+      Jan 1, 0001
+    </time>
+  </span>
+</span>
+
+<span class="flex align-center no-wrap">
+  <svg class="gdoc-icon gdoc_timer"><use xlink:href="#gdoc_timer"></use></svg>
+  <span class="gdoc-post__tag">0 分钟阅读时间</span>
 </span>
 
 
@@ -467,8 +543,7 @@
     <div>
       <section class="flex flex-wrap align-center">
         <span class="gdoc-footer__item gdoc-footer__item--row">
-          Built with <a href="https://gohugo.io/" class="gdoc-footer__link">Hugo</a> and <svg class="gdoc-icon gdoc_heart"><use xlink:href="#gdoc_heart"></use></svg>
-
+          Here is DEV  Nook
         </span>
         
         
@@ -478,11 +553,11 @@
     
       <div class="flex flex-25 justify-end">
         <span class="gdoc-footer__item text-right">
-          <a class="gdoc-footer__link fake-link" href="#" aria-label="Back to top">
+          <a class="gdoc-footer__link fake-link" href="#" aria-label="回到顶部">
             <svg class="gdoc-icon gdoc_keyboard_arrow_up">
               <use xlink:href="#gdoc_keyboard_arrow_up"></use>
             </svg>
-            <span class="hidden-mobile">Back to top</span>
+            <span class="hidden-mobile">回到顶部</span>
           </a>
         </span>
       </div>

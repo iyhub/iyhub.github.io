@@ -61,9 +61,9 @@
 总结：在NIO模型中，快递公司通过号码排队系统和快递员的智能调度，提高了服务效率，减少了资源浪费，类似地，在NIO模型中，服务器通过选择器和快递员线程的智能调度，提高了并发性能，充分利用系统资源。
 二.启动Netty服务端 public class Server { public static void main(String[] args) { /** * 三部曲:线程模型 io模型 读写处理逻辑 */ ServerBootstrap serverBootstrap = new ServerBootstrap(); // ========= 第一步:线程模型 ==================== // 负责处理新连接的线程组:类似老板，不做事，只负责接活 NioEventLoopGroup boss = new NioEventLoopGroup(); // 负责数据读写的线程组:类似员工，当老板接活后，交给员工去做 NioEventLoopGroup works = new NioEventLoopGroup(); // 服务端启动引导类配置 serverBootstrap." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://example.com/posts/my-first-post/" />
+<meta property="og:url" content="https://example.com/%E6%88%90%E9%95%BF%E7%AC%94%E8%AE%B0/my-first-post/" />
 
-<meta property="article:section" content="Posts" />
+<meta property="article:section" content="成长笔记" />
     <meta
       property="article:published_time"
       content="2022-11-20T09:03:20-08:00"
@@ -94,9 +94,9 @@
   {
       "@context": "http://schema.org",
       "@type": "TechArticle",
-      "articleSection": "Posts",
+      "articleSection": "成长笔记",
       "name": "Netty学习笔记",
-      "url" : "https://example.com/posts/my-first-post/",
+      "url" : "https://example.com/%E6%88%90%E9%95%BF%E7%AC%94%E8%AE%B0/my-first-post/",
       "headline": "Netty学习笔记",
       "description": "一.Netty是什么 1.NIO模型的引入 O模型（阻塞IO）：就像在餐厅取餐时，需要等待食物做好才能取餐，期间你不能离开窗口，需要一直等待询询问窗口是否出餐。 NIO模型（非阻塞IO）：就像在餐厅取餐时，使用号码排队系统，你可以去做其他事情，而不必一直等待食物做好，当餐台出餐会以系统通知的形式告诉你出餐。 BIO模型的明显弊端:\n让我们用一家快递公司的场景来说明BIO:\n在这个场景中，你可以把快递公司看作是服务器，每个顾客则是一个客户端连接。当顾客到达快递公司时，他们需要办理寄送快递的手续，而快递公司需要为每个顾客分配一个专门的快递员来处理他们的快递业务。\n在BIO模型中，每个客户端连接都需要一个独立的线程来处理，就像快递公司为每个顾客分配了一个专门的快递员。\n线程数量增长问题:\n现在假设有一天，快递公司突然涌入了大量顾客，每个顾客都需要寄送快递。在传统的BIO模型中，为了处理这些顾客，快递公司不得不雇佣更多的快递员（线程），每个顾客（客户端连接）都需要一个独立的快递员（线程）来处理。随着顾客数量的增加，快递公司不得不不断雇佣更多的快递员，导致成本和资源的浪费\n阻塞等待问题:\n而且当一个快递员在处理一个顾客的快递业务时，如果这个顾客提出了一个需要特殊处理或较长时间才能解决的问题，快递员就会一直等待，无法处理其他顾客的快递业务。这就是阻塞等待问题。在这个场景中，你可以把快递公司看作是服务器，每个顾客则是一个客户端连接。当顾客到达快递公司时，他们需要办理寄送快递的手续，而快递公司需要为每个顾客分配一个专门的快递员来处理他们的快递业务。\n线程数量增长问题： 在BIO模型中，每个客户端连接都需要一个独立的线程来处理，即使客户端没有实际的IO操作。当有大量客户端连接时，就会创建大量线程，这会占用大量系统资源，而且线程切换也会带来额外的开销。这种线程数量增长问题称为\u0022线程爆炸\u0022。 阻塞等待问题： 在BIO模型中，当一个线程在执行IO操作时，它会一直阻塞等待，直到IO操作完成或超时。这导致线程在等待IO时无法被释放出来，从而无法处理其他客户端连接。如果IO操作耗时较长，就会导致大量线程被阻塞，造成资源浪费和性能下降。 在NIO模型中，快递公司可以引入一个号码排队系统，让顾客自行取号，然后在大屏幕上显示当前叫号的号码。在这里，快递公司可以将号码排队系统看作是选择器（Selector），大屏幕上显示的号码就是已就绪的通道（快递员）。\n启动： 快递公司（服务器）打开营业窗口，创建一个选择器（Selector）来管理客户端连接。 快递公司（服务器）启动多个快递员线程（Reactor线程），这些快递员线程会不断轮询选择器，处理就绪的通道（已取号的顾客）。 顾客（客户端）到达： 当有顾客（客户端）到达快递公司（服务器），他们先取一个号码（注册到选择器），然后可以自由活动，不需要一直等待。 快递公司的大屏幕（选择器）会显示当前叫号的号码（已就绪的通道）。 快递员处理： 每个快递员线程会不断地从选择器中获取已就绪的通道（已取号的顾客）。 当一个通道（快递员）处于就绪状态（有客户需要处理）时，快递员线程会立即处理该通道的（已取号的顾客）快递业务，这可能包括读取快递信息、写入快递信息等。 快递员轮询选择器： 当一个快递员处理完一个通道的业务后，会立即返回选择器，查看是否有其他通道已经就绪。 如果有其他通道已就绪，则立即处理该通道的业务，如果没有就绪的通道，则快递员线程会在选择器上阻塞，等待新的通道就绪，以避免空闲等待。 通过使用NIO模型，快递公司可以高效地利用每个快递员的时间，避免了快递员一直等待，提高了服务效率。类似地，在NIO模型中，服务器通过一个线程处理多个客户端连接的IO操作，避免了线程数量增长和阻塞等待问题，提高了并发性能和响应能力。\n总结：在NIO模型中，快递公司通过号码排队系统和快递员的智能调度，提高了服务效率，减少了资源浪费，类似地，在NIO模型中，服务器通过选择器和快递员线程的智能调度，提高了并发性能，充分利用系统资源。\n二.启动Netty服务端 public class Server { public static void main(String[] args) { \/** * 三部曲:线程模型 io模型 读写处理逻辑 *\/ ServerBootstrap serverBootstrap = new ServerBootstrap(); \/\/ ========= 第一步:线程模型 ==================== \/\/ 负责处理新连接的线程组:类似老板，不做事，只负责接活 NioEventLoopGroup boss = new NioEventLoopGroup(); \/\/ 负责数据读写的线程组:类似员工，当老板接活后，交给员工去做 NioEventLoopGroup works = new NioEventLoopGroup(); \/\/ 服务端启动引导类配置 serverBootstrap.",
       "wordCount" : "124",
@@ -104,7 +104,7 @@
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://example.com/posts/my-first-post/"
+          "@id": "https://example.com/%E6%88%90%E9%95%BF%E7%AC%94%E8%AE%B0/my-first-post/"
       },
       "copyrightHolder" : "",
       "copyrightYear" : "2022",
@@ -188,7 +188,7 @@
   href="/custom.css"
   media="all"
 />
-  <link href="https://example.com/posts/my-first-post/" rel="canonical" type="text/html" />
+  <link href="https://example.com/%E6%88%90%E9%95%BF%E7%AC%94%E8%AE%B0/my-first-post/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -429,7 +429,7 @@
                 <span class="flex">
                   <a
                     href="/posts/my-first-post/"
-                    class="gdoc-nav__entry is-active"
+                    class="gdoc-nav__entry"
                   >
                     Netty学习笔记
                   </a>
@@ -512,7 +512,7 @@
                 <span class="flex">
                   <a
                     href="/%E6%88%90%E9%95%BF%E7%AC%94%E8%AE%B0/my-first-post/"
-                    class="gdoc-nav__entry"
+                    class="gdoc-nav__entry is-active"
                   >
                     Netty学习笔记
                   </a>
@@ -557,38 +557,71 @@
 
         <div class="gdoc-page">
           
-  <article class="gdoc-post">
-    <header class="gdoc-post__header">
-      <h1 class="gdoc-post__title">Netty学习笔记</h1>
-      <div class="flex flex-wrap align-center gdoc-post__meta gdoc-post__meta--head">
-        <span class="flex align-center no-wrap">
-  <svg class="gdoc-icon gdoc_date"><use xlink:href="#gdoc_date"></use></svg>
-  <span class="gdoc-post__tag">
-    <time datetime="2022-11-20T09:03:20-08:00">
-      
-      Nov 20, 2022
-    </time>
-  </span>
-</span>
+  
 
-<span class="flex align-center no-wrap">
-  <svg class="gdoc-icon gdoc_timer"><use xlink:href="#gdoc_timer"></use></svg>
-  <span class="gdoc-post__tag">One minute to read</span>
-</span>
+
+  
 
 
 
 
 
 
-      </div>
-    </header>
-    <section class="gdoc-markdown">
-      <div class="gdoc-page__anchorwrap">
+<div
+  class="gdoc-page__header flex flex-wrap
+  
+    justify-between
+  
+  hidden-mobile
+  "
+  itemprop="breadcrumb"
+>
+  
+    <div>
+      <svg class="gdoc-icon gdoc_path hidden-mobile"><use xlink:href="#gdoc_path"></use></svg>
+      <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        
+        
+        
+        
+  
+  
+    
+    
+    
+    
+  
+  
+    
+    
+    
+    
+  
+  
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>Netty学习笔记</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/%E6%88%90%E9%95%BF%E7%AC%94%E8%AE%B0/' href='/%E6%88%90%E9%95%BF%E7%AC%94%E8%AE%B0/'><span itemprop='name'>成长笔记s</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Netty学习笔记</span><meta itemprop='position' content='3' /></li>
+  
+
+  
+
+  
+
+      </ol>
+    </div>
+  
+  
+</div>
+
+
+
+  <article
+    class="gdoc-markdown gdoc-markdown__align--left"
+  >
+    <h1>Netty学习笔记</h1>
+    <div class="gdoc-page__anchorwrap">
     <h2 id="一netty是什么"
     >
         一.Netty是什么
-        <a data-clipboard-text="https://example.com/posts/my-first-post/#一netty是什么" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 一.Netty是什么" aria-label="Anchor to: 一.Netty是什么" href="#%e4%b8%80netty%e6%98%af%e4%bb%80%e4%b9%88">
+        <a data-clipboard-text="https://example.com/%E6%88%90%E9%95%BF%E7%AC%94%E8%AE%B0/my-first-post/#一netty是什么" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 一.Netty是什么" aria-label="Anchor to: 一.Netty是什么" href="#%e4%b8%80netty%e6%98%af%e4%bb%80%e4%b9%88">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
@@ -597,7 +630,7 @@
     <h3 id="1nio模型的引入"
     >
         1.NIO模型的引入
-        <a data-clipboard-text="https://example.com/posts/my-first-post/#1nio模型的引入" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 1.NIO模型的引入" aria-label="Anchor to: 1.NIO模型的引入" href="#1nio%e6%a8%a1%e5%9e%8b%e7%9a%84%e5%bc%95%e5%85%a5">
+        <a data-clipboard-text="https://example.com/%E6%88%90%E9%95%BF%E7%AC%94%E8%AE%B0/my-first-post/#1nio模型的引入" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 1.NIO模型的引入" aria-label="Anchor to: 1.NIO模型的引入" href="#1nio%e6%a8%a1%e5%9e%8b%e7%9a%84%e5%bc%95%e5%85%a5">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h3>
@@ -657,7 +690,7 @@
     <h2 id="二启动netty服务端"
     >
         二.启动Netty服务端
-        <a data-clipboard-text="https://example.com/posts/my-first-post/#二启动netty服务端" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 二.启动Netty服务端" aria-label="Anchor to: 二.启动Netty服务端" href="#%e4%ba%8c%e5%90%af%e5%8a%a8netty%e6%9c%8d%e5%8a%a1%e7%ab%af">
+        <a data-clipboard-text="https://example.com/%E6%88%90%E9%95%BF%E7%AC%94%E8%AE%B0/my-first-post/#二启动netty服务端" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 二.启动Netty服务端" aria-label="Anchor to: 二.启动Netty服务端" href="#%e4%ba%8c%e5%90%af%e5%8a%a8netty%e6%9c%8d%e5%8a%a1%e7%ab%af">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
@@ -700,7 +733,6 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div>
-    </section>
   </article>
 
 
