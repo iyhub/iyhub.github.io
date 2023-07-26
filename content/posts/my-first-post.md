@@ -1,10 +1,8 @@
 ---
-title: "My First Post"
+title: "Netty学习笔记"
 date: 2022-11-20T09:03:20-08:00
 draft: false
 ---
-# Netty学习笔记
-
 ## 一.Netty是什么
 
 ### 1.NIO模型的引入
