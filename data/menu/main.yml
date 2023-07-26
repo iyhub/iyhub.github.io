@@ -1,0 +1,11 @@
+---
+# 自定义菜单
+main:
+  - name: java
+    ref: "/java"
+    icon: "gdoc_notification"
+    sub:
+      - name: netty
+        ref: "/java/netty"
+         # Anchor to add to the entry. This example will result in `/level-2/level-2-2/#anchor`
+        anchor: anchor

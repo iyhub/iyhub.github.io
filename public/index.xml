@@ -1,38 +1,265 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Netty学习笔记 on DEV Nook</title>
-    <link>/</link>
-    <description>Recent content in Netty学习笔记 on DEV Nook</description>
+    <title>DEV Nook</title>
+    <link>https://devnook.cn/</link>
+    <description>Recent content on DEV Nook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 20 Nov 2022 09:03:20 -0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Mar 2023 16:37:12 +0000</lastBuildDate><atom:link href="https://devnook.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Netty学习笔记</title>
-      <link>/2022/11/netty%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <title>一定要收藏的30条Git命令</title>
+      <link>https://devnook.cn/archives/git-cmd/</link>
+      <pubDate>Sat, 18 Mar 2023 16:37:12 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/git-cmd/</guid>
+      <description>GIT命令 - git clone：克隆仓库，作用:远端代码下载到本地 示例: git clone xxx.com/yy.git 示例解释: 从xxx.com/yy.git 克隆远端代码到当前目录 - git init：初始化仓库，作用:将本地未初始化的仓库标识为一个git 仓库 示例: 在指定目录下执行git init 即可初始化 示例解释: 在当前目录下初始化一个新的Git仓库 - git push：推送到远程仓库，作用：将本地仓库中的代码推送到远程仓库中。 示例: git push origin master 示例解释: 将本地master分支的代码推送到远程仓库origin中 - git pull：从远程仓库拉取最新的代码，作用：将远程仓库中的代码拉取到本地仓库中。 示例: git pull origin master 示例解释: 从远程仓库origin的master分支拉取最新代码到本地 - git branch：列出分支，作用：列出本地仓库中的所有分支。 示例: git branch 示例解释: 列出本地仓库中的所有分支 - git checkout：切换分支或还原文件，作用：切换本地仓库中的分支或还原工作区的文件。 示例: git checkout branchname 示例解释: 切换到名为branchname的分支 - git merge：合并分支，作用：将指定分支合并到当前分支中。 示例: git merge branchname 示例解释: 将名为branchname的分支合并到当前分支中 - git status：查看仓库状态，作用：查看工作区、暂存区和本地仓库中的文件状态。 示例: git status 示例解释: 查看当前Git仓库的状态 - git log：查看提交历史，作用：查看本地仓库中的提交历史记录。 示例: git log 示例解释: 查看本地Git仓库中的提交历史记录 - git remote：管理远程仓库，作用：添加、删除或查看远程仓库的信息。 示例: git remote add origin xxx.</description>
+    </item>
+    
+    <item>
+      <title>ChatGPT会话内容导出插件</title>
+      <link>https://devnook.cn/archives/chatgpt-export/</link>
+      <pubDate>Tue, 14 Mar 2023 12:57:21 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/chatgpt-export/</guid>
+      <description>1.右键油猴添加新脚本 2.替换为下方代码内容 3.脚本代码 // ==UserScript== // @name ChatGPT Conversation Export // @author iy // @version 1.0.0 // @description Export ChatGPT Conversation to .md // @match https://chat.openai.com/* // @icon data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== // @icon64 data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== // @run-at document-idle // ==/UserScript== (function () { &amp;#34;use strict&amp;#34;; var commonjsGlobal = typeof globalThis !== &amp;#34;undefined&amp;#34; ? globalThis : typeof window !== &amp;#34;undefined&amp;#34; ? window : typeof global !== &amp;#34;undefined&amp;#34; ? global : typeof self !== &amp;#34;undefined&amp;#34; ?</description>
+    </item>
+    
+    <item>
+      <title>Dev Nook</title>
+      <link>https://devnook.cn/Hello/</link>
       <pubDate>Sun, 20 Nov 2022 09:03:20 -0800</pubDate>
       
-      <guid>/2022/11/netty%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <description>一.Netty是什么 1.NIO模型的引入 O模型（阻塞IO）：就像在餐厅取餐时，需要等待食物做好才能取餐，期间你不能离开窗口，需要一直等待询询问窗口是否出餐。 NIO模型（非阻塞IO）：就像在餐厅取餐时，使用号码排队系统，你可以去做其他事情，而不必一直等待食物做好，当餐台出餐会以系统通知的形式告诉你出餐。 BIO模型的明显弊端:
-让我们用一家快递公司的场景来说明BIO:
-在这个场景中，你可以把快递公司看作是服务器，每个顾客则是一个客户端连接。当顾客到达快递公司时，他们需要办理寄送快递的手续，而快递公司需要为每个顾客分配一个专门的快递员来处理他们的快递业务。
-在BIO模型中，每个客户端连接都需要一个独立的线程来处理，就像快递公司为每个顾客分配了一个专门的快递员。
-线程数量增长问题:
-现在假设有一天，快递公司突然涌入了大量顾客，每个顾客都需要寄送快递。在传统的BIO模型中，为了处理这些顾客，快递公司不得不雇佣更多的快递员（线程），每个顾客（客户端连接）都需要一个独立的快递员（线程）来处理。随着顾客数量的增加，快递公司不得不不断雇佣更多的快递员，导致成本和资源的浪费
-阻塞等待问题:
-而且当一个快递员在处理一个顾客的快递业务时，如果这个顾客提出了一个需要特殊处理或较长时间才能解决的问题，快递员就会一直等待，无法处理其他顾客的快递业务。这就是阻塞等待问题。在这个场景中，你可以把快递公司看作是服务器，每个顾客则是一个客户端连接。当顾客到达快递公司时，他们需要办理寄送快递的手续，而快递公司需要为每个顾客分配一个专门的快递员来处理他们的快递业务。
-线程数量增长问题： 在BIO模型中，每个客户端连接都需要一个独立的线程来处理，即使客户端没有实际的IO操作。当有大量客户端连接时，就会创建大量线程，这会占用大量系统资源，而且线程切换也会带来额外的开销。这种线程数量增长问题称为&amp;quot;线程爆炸&amp;quot;。 阻塞等待问题： 在BIO模型中，当一个线程在执行IO操作时，它会一直阻塞等待，直到IO操作完成或超时。这导致线程在等待IO时无法被释放出来，从而无法处理其他客户端连接。如果IO操作耗时较长，就会导致大量线程被阻塞，造成资源浪费和性能下降。 在NIO模型中，快递公司可以引入一个号码排队系统，让顾客自行取号，然后在大屏幕上显示当前叫号的号码。在这里，快递公司可以将号码排队系统看作是选择器（Selector），大屏幕上显示的号码就是已就绪的通道（快递员）。
-启动： 快递公司（服务器）打开营业窗口，创建一个选择器（Selector）来管理客户端连接。 快递公司（服务器）启动多个快递员线程（Reactor线程），这些快递员线程会不断轮询选择器，处理就绪的通道（已取号的顾客）。 顾客（客户端）到达： 当有顾客（客户端）到达快递公司（服务器），他们先取一个号码（注册到选择器），然后可以自由活动，不需要一直等待。 快递公司的大屏幕（选择器）会显示当前叫号的号码（已就绪的通道）。 快递员处理： 每个快递员线程会不断地从选择器中获取已就绪的通道（已取号的顾客）。 当一个通道（快递员）处于就绪状态（有客户需要处理）时，快递员线程会立即处理该通道的（已取号的顾客）快递业务，这可能包括读取快递信息、写入快递信息等。 快递员轮询选择器： 当一个快递员处理完一个通道的业务后，会立即返回选择器，查看是否有其他通道已经就绪。 如果有其他通道已就绪，则立即处理该通道的业务，如果没有就绪的通道，则快递员线程会在选择器上阻塞，等待新的通道就绪，以避免空闲等待。 通过使用NIO模型，快递公司可以高效地利用每个快递员的时间，避免了快递员一直等待，提高了服务效率。类似地，在NIO模型中，服务器通过一个线程处理多个客户端连接的IO操作，避免了线程数量增长和阻塞等待问题，提高了并发性能和响应能力。
-总结：在NIO模型中，快递公司通过号码排队系统和快递员的智能调度，提高了服务效率，减少了资源浪费，类似地，在NIO模型中，服务器通过选择器和快递员线程的智能调度，提高了并发性能，充分利用系统资源。
-二.启动Netty服务端 public class Server { public static void main(String[] args) { /** * 三部曲:线程模型 io模型 读写处理逻辑 */ ServerBootstrap serverBootstrap = new ServerBootstrap(); // ========= 第一步:线程模型 ==================== // 负责处理新连接的线程组:类似老板，不做事，只负责接活 NioEventLoopGroup boss = new NioEventLoopGroup(); // 负责数据读写的线程组:类似员工，当老板接活后，交给员工去做 NioEventLoopGroup works = new NioEventLoopGroup(); // 服务端启动引导类配置 serverBootstrap.</description>
+      <guid>https://devnook.cn/Hello/</guid>
+      <description>Welcome to Dev Nook </description>
+    </item>
+    
+    <item>
+      <title>Netty学习笔记</title>
+      <link>https://devnook.cn/%E5%8D%9A%E5%AE%A2/java/netty/</link>
+      <pubDate>Sun, 20 Nov 2022 09:03:20 -0800</pubDate>
+      
+      <guid>https://devnook.cn/%E5%8D%9A%E5%AE%A2/java/netty/</guid>
+      <description>什么是BIO/NIO,如何理解NIO模型</description>
+    </item>
+    
+    <item>
+      <title>Redis Pipeline &amp; 发布订阅</title>
+      <link>https://devnook.cn/archives/redispipeline/</link>
+      <pubDate>Thu, 16 Jun 2022 15:53:49 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/redispipeline/</guid>
+      <description>1.Redis 管道（Pipeline） 我们搬家的时候往往是大包小包。 此时，有两种方案可以选择：
+完全靠一己之力，一趟一趟的搬。找个货运车，一趟就搬过去。 而Pipeline就是这个这个货运车，把你的一批命令一把送过去，然后告诉你结果。目的是节省你的网络开销（建立连接 关闭连接 再开再关，对于计算机而已都是需要开辟资源去处理的）。
+使用场景： 1.批处理、维护缓存数据
+在电商的场景中，我们可能会把商品的一些信息放到缓存，比如说：库存数据，比如说显示的商品价格，而前篇文章提到了： Redis中的List、Set、Hash实际使用场景 我们用Redis Hash存放购物车数据，购物车的商品信息存在hash的一个filed：info_productIdx里。当我们的商品价格在后台被改掉的时候：购物车显示给用户的价格肯定也得是最新的。
+2.Redis的发布发布订阅（Pub/Sub） 发布订阅，顾名思义，一个消息发布之后，已经预约了当前主题的订阅者都能收到通知。
+127.0.0.1:6379&amp;gt;&amp;nbsp;PUBLISH&amp;nbsp;testChannel&amp;nbsp;&#34;hello&amp;nbsp;sub&#34;
+#&amp;nbsp;返回2为订阅者的个数
+(integer)&amp;nbsp;2
+另外两个客户端订阅testChannel通道的消息，消息发布之后订阅者收到通知：
+SUBSCRIBE&amp;nbsp;testChannel
+Reading&amp;nbsp;messages...&amp;nbsp;(press&amp;nbsp;Ctrl-C&amp;nbsp;to&amp;nbsp;quit)
+1)&amp;nbsp;&#34;subscribe&#34;
+2)&amp;nbsp;&#34;testChannel&#34;
+3)&amp;nbsp;(integer)&amp;nbsp;1
+1)&amp;nbsp;&#34;message&#34;
+2)&amp;nbsp;&#34;testChannel&#34;
+3)&amp;nbsp;&#34;hello&amp;nbsp;sub&#34;
+1)&amp;nbsp;&#34;message&#34;
+订阅某个特定的前缀的通道：比如订阅下文中的所有秒杀活动开始的通知。
+SUBSCRIBE&amp;nbsp;&amp;nbsp;activity*
+使用场景: 异步消息通知（like:活动预约提醒） 我们在京东/天猫订阅的秒杀活动预约通知，其实我们往Redis技术层面来思考，Redis轻而易举就能实现了。 假如活动ID为：666，活动key设置为：activity:666，活动未开始之前提供的那个【提醒我】，当按钮被点击之后，相当于用户订阅了通道key 为：SUBSCRIBE activity:666，而活动开始那一刻便是发布消息：PUBLISH activity:666 &#34;IPhone 12 activiy start &#34;，然后通过业务代码实现站内推送或者是短信的方式通知。 3.Redis事务 Redis事务相比MySQL，在Redis中，单条命令是原子性执行的，但事务不保证原子性，且没有回滚。事务中任意命令执行失败，其余的命令仍会被执行。
+#&amp;nbsp;开启事务：
+MULTI
+OK
+INCR&amp;nbsp;foo
+QUEUED
+INCR&amp;nbsp;bar
+QUEUED
+#&amp;nbsp;提交事务
+EXEC
+#&amp;nbsp;提交结果，按提交命令顺序返回
+1)&amp;nbsp;(integer)&amp;nbsp;1
+2)&amp;nbsp;(integer)&amp;nbsp;1
+Redis事务中的错误处理 使用事务时可能会遇上以下两种错误：
+事务在执行 EXEC 之前，入队的命令可能会出错。比如说，命令可能会产生语法错误（参数数量错误，参数名错误，等等），或者其他更严重的错误，比如内存不足（如果服务器使用 maxmemory 设置了最大内存限制的话）。从 Redis 2.6.5 开始，服务器会对命令入队失败的情况进行记录，并在客户端调用 EXEC 命令时，拒绝执行并自动放弃这个事务。
+命令可能在 EXEC 调用之后失败。举个例子，事务中的命令可能处理了错误类型的键，比如将列表命令用在了字符串键上面，诸如此类。 Redis不会进行特别处理： 即使事务中有某个/某些命令在执行时产生了错误， 事务中的其他命令仍然会继续执行。</description>
+    </item>
+    
+    <item>
+      <title>Arthas 使用笔记</title>
+      <link>https://devnook.cn/archives/arthas/</link>
+      <pubDate>Mon, 13 Jun 2022 23:01:29 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/arthas/</guid>
+      <description>Arthas 使用笔记 1.查找某个类文件 DemoController,热加载class sc com.arthas.controller.DemoController # 在IDEA中修改,之后,编译 mc /Users/develop/source/arthas-demo/src/main/java/com/arthas/controller/DemoController.java # 热加载 redefine /Users/develop/source/zhuyong/arthas-demo/com/arthas/controller/DemoController.class 2.获取线程状态 # 获取当前最忙碌的前三个线程 thread -n 3 # 显示指定线程的运行堆栈 thread 线程id # 找出当前阻塞其他线程的线程 # 有时候我们发现应用卡住了， 通常是由于某个线程拿住了某个锁， 并且其他线程都在等待这把锁造成的。 thread -b # 获取 WAITING 状态的线程 thread --state WAITING thread --state TIMED_WAITING # 找出当前阻塞其他线程的线程 thread -b 3. 获取 当前垃圾收集器,线程数量(jvm 命令) jvm --------------------------------------------------------------------------------------------------------------------------------------------------------------------- GARBAGE-COLLECTORS --------------------------------------------------------------------------------------------------------------------------------------------------------------------- PS Scavenge name : PS Scavenge [count/time (ms)] collectionCount : 4 collectionTime : 56 PS MarkSweep name : PS MarkSweep [count/time (ms)] collectionCount : 2 collectionTime : 78 --------------------------------------------------------------------------------------------------------------------------------------------------------------------- THREAD --------------------------------------------------------------------------------------------------------------------------------------------------------------------- COUNT 34 # JVM当前活跃的线程数 DAEMON-COUNT 30 # JVM当前活跃的守护线程数 PEAK-COUNT 36 # 从JVM启动开始曾经活着的最大线程数 STARTED-COUNT 51 # 从JVM启动开始总共启动过的线程次数 DEADLOCK-COUNT 0 # JVM当前死锁的线程数 4.</description>
+    </item>
+    
+    <item>
+      <title>Java必背的100词</title>
+      <link>https://devnook.cn/archives/java-word/</link>
+      <pubDate>Fri, 31 Dec 2021 21:18:31 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/java-word/</guid>
+      <description>OO: object-oriented ,面向对象 OOA: Object-Oriented Analysis 面向对象分析 OOD: Object-Oriented Design 面向对象设计 OOP: object-oriented programming,面向对象编程 JDK:java development kit, java开发工具包 JVM:java virtual machine ,java虚拟机 Compile:编绎 Run:运行 Class:类 Object:对象 System:系统 out:输出 print:打印 line:行 variable:变量 type:类型 operation:操作,运算 array:数组 parameter:参数 method:方法 function:函数 member-variable:成员变量 member-function:成员函数 get:得到 set:设置 public:公有的 private:私有的 protected:受保护的 default:默认 access:访问 package:包 import:导入 static:静态的 void:无(返回类型) extends:继承 parent class:父类 base class:基类 super class:超类 child class:子类 derived class:派生类 override:重写,覆盖 overload:重载 final:最终的,不能改变的 abstract:抽象 interface:接口 implements:实现 exception:异常 Runtime:运行时 ArithmeticException:算术异常 ArrayIndexOutOfBoundsException:数组下标越界异常NullPointerException:空引用异常 ClassNotFoundException:类没有发现异常 NumberFormatException:数字格式异常(字符串不能转化为数字) Try:尝试 Catch:捕捉 Finally:最后 Throw:抛出 Throws: (投掷)表示强制异常处理 Throwable:(可抛出的)表示所有异常类的祖先类 Lang:language,语言 Util:工具 Display:显示 Random:随机 Collection:集合 ArrayList:(数组列表)表示动态数组 HashMap: 散列表,哈希表 Swing:轻巧的 Awt:abstract window toolkit:抽象窗口工具包 Frame:窗体 Size:尺寸 Title:标题 Add:添加 Panel:面板 Layout:布局 Scroll:滚动 Vertical:垂直 Horizonatal:水平 Label:标签 TextField:文本框 TextArea:文本域 Button:按钮 Checkbox:复选框 Radiobutton:单选按钮 Combobox:复选框 Event:事件 Mouse:鼠标 Key:键 Focus:焦点 Listener:监听 Border:边界 Flow:流 Grid:网格 MenuBar:菜单栏 Menu:菜单 MenuItem:菜单项 PopupMenu:弹出菜单 Dialog:对话框 Message:消息 icon:图标 Tree:树 Node:节点 Jdbc:java database connectivity,java数据库连接 DriverManager:驱动管理器 Connection:连接 Statement:表示执行对象 Preparedstatement:表示预执行对象 Resultset:结果集 Next:下一个 Close:关闭 executeQuery:执行查询 Jbuilder中常用英文(共33个) File:文件 New:新建 New Project:新建项目 New Class: 新建类 New File:新建文件 Open project:打开项目 Open file:打开文件 Reopen:重新打开 Close projects:关闭项目 Close all except…:除了.</description>
+    </item>
+    
+    <item>
+      <title>GoLang Web开发小示例</title>
+      <link>https://devnook.cn/archives/go-web-example/</link>
+      <pubDate>Fri, 17 Dec 2021 23:50:52 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/go-web-example/</guid>
+      <description>Go-Gin服务主程序 原站访问
+我的Json数据提取站原理
+package main import ( &amp;#34;encoding/json&amp;#34; &amp;#34;github.com/gin-gonic/gin&amp;#34; &amp;#34;github.com/oliveagle/jsonpath&amp;#34; &amp;#34;log&amp;#34; &amp;#34;net/http&amp;#34; ) func main() { address := &amp;#34;localhost:1024&amp;#34; router := gin.Default() router.LoadHTMLGlob(&amp;#34;templates/*&amp;#34;) router.POST(&amp;#34;/parse&amp;#34;,parse) router.GET(&amp;#34;/index&amp;#34;, func(c *gin.Context) { c.HTML(http.StatusOK, &amp;#34;index.tmpl&amp;#34;, gin.H{ &amp;#34;title&amp;#34;: &amp;#34;Main website&amp;#34;, }) }) router.Run(address) } type User struct { Content string `json:&amp;#34;content&amp;#34;` Expression string `json:&amp;#34;expression&amp;#34;` } func parse(c *gin.Context) { content := c.PostForm(&amp;#34;content&amp;#34;) log.Println(&amp;#34;content:&amp;#34;, content) jsonObj := User{} c.BindJSON(&amp;amp;jsonObj) var json_data interface{} json.Unmarshal([]byte(jsonObj.Content), &amp;amp;json_data) log.Println(&amp;#34;传入数据:&amp;#34;, jsonObj.Content) log.</description>
+    </item>
+    
+    <item>
+      <title>Json解析神器</title>
+      <link>https://devnook.cn/archives/JsonPath/</link>
+      <pubDate>Fri, 17 Dec 2021 23:43:17 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/JsonPath/</guid>
+      <description>更花式高效解析Json 有如下json字符串:
+{ &amp;#34;data&amp;#34;:[ { &amp;#34;name&amp;#34;:&amp;#34;张三&amp;#34;, &amp;#34;age&amp;#34;:18 }, { &amp;#34;name&amp;#34;:&amp;#34;李四&amp;#34;, &amp;#34;age&amp;#34;:20 }, { &amp;#34;name&amp;#34;:&amp;#34;王五&amp;#34;, &amp;#34;age&amp;#34;:108, &amp;#34;boss&amp;#34;:true } ] } 现在有如下需求
+1.如何解析出data元素中的所有name字段? 常规做法Gson,Json转对象列表再遍历,有没有更骚的操作?
+来看看这个:
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.jayway.jsonpath&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;json-path&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.2.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; import com.jayway.jsonpath.DocumentContext; import com.jayway.jsonpath.JsonPath; String str = &amp;#34;{\&amp;#34;data\&amp;#34;:[{\&amp;#34;name\&amp;#34;:\&amp;#34;张三\&amp;#34;,\&amp;#34;age\&amp;#34;:18},{\&amp;#34;name\&amp;#34;:\&amp;#34;李四\&amp;#34;,\&amp;#34;age\&amp;#34;:20},{\&amp;#34;name\&amp;#34;:\&amp;#34;王五\&amp;#34;,\&amp;#34;age\&amp;#34;:108,\&amp;#34;boss\&amp;#34;:true}]}&amp;#34; DocumentContext doc = JsonPath.parse(); List&amp;lt;String&amp;gt; names = doc.read(&amp;#34;$.data.[*].name&amp;#34;); // names :[&amp;#34;张三&amp;#34;,&amp;#34;李四&amp;#34;,&amp;#34;王五&amp;#34;] 2. 提取最后一个对象的name //获取在负一位置的元素即最后的元素 String names = doc.read(&amp;#34;$.data.[-1].name&amp;#34;); // names :&amp;#34;王五&amp;#34; 3. 筛选age&amp;gt;18的元素 // [&amp;#34;李四&amp;#34;,&amp;#34;王五&amp;#34;] String names = doc.read(&amp;#34;$.data[?(@.age &amp;gt; 18)].name&amp;#34;); 4.获取含有字段boss的元素 // [&amp;#34;李四&amp;#34;,&amp;#34;王五&amp;#34;] String names = doc.</description>
+    </item>
+    
+    <item>
+      <title>垃圾回收器 垃圾回收算法</title>
+      <link>https://devnook.cn/archives/jvm-gc/</link>
+      <pubDate>Thu, 25 Nov 2021 18:11:34 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/jvm-gc/</guid>
+      <description>包租婆：你知道市面上有哪些垃圾回收器？他们各自有什么特点？ 一. 标记清除算法 1.主要过程： a.标记：先顺着 GC Roots 往下扫，保洁先从 101 开始巡查一遍所有的房间，并房间门口标记一个标识：这个房间是否可以打扫了？其他房间借的当前房间空调遥控器已经退还了吗，即：是否还被其他对象持有引用？ b.清除：再把标识为可以打扫的房间挨个打扫干净。 2.缺点： 两次扫描，效率低且存在空间碎片，清理出来的房间不连续 3.适合场景： 老年代：老年代存活对象较多，需要标记的少，需要清除的也少。 二. 复制算法 1.主要过程：将可用对象拷贝到一片新的空间。把垃圾留在一片区域，从而清理的时候我放心的清理这边垃圾区。 2.缺点： 空间浪费 增加调整引用的成本：对象移动到一片新的空间，需要调整对象的引用。 使用场景：Eden 区域，大多对象朝生夕死。 三. 标记整理算法 1.主要过程： 顺着 GC Roots 往下扫，扫到了垃圾处理，再把可用对象在空间上整理布局，保证连续。
+2.使用场景： 上文提到了标记清除有空间碎片，那么保洁是不是可以在打扫的时候，把需要打扫的房间里的租客“请”到其他的干净房间？
+老年代：老年代存活对象较多，需要标记的少，需要清除的也少。 3.缺点： 不仅要标记所有存活对象，还要整理存活对象的引用地址。单位时间内活儿多了自然效率就低了。
+五.对象内存分配过程 new -&amp;gt; 尝试栈上分配 -&amp;gt; 尝试线程本地分配 -&amp;gt; 进入 eden 区 -&amp;gt; 默认在幸存区存活 15 次了 -&amp;gt; 进入老年代
+大对象直接进入 old 区。
+动态年龄判断：在将 s0 的对象往 s1 拷贝的时候，发现 s1 的内存已经超过了一版，那么会将年龄最大的放到老年代。
+分配担保：在 YGC 时候，来了一个大对象但是 survivor 区空间不够了 空间担保直接进入老年代
+六：查看当前 JVM 设定的参数 -XX:+PrintFlagsFinal -version # 管道过滤 java -XX:+PrintFlagsFinal -version | grep NewRatio 七.</description>
+    </item>
+    
+    <item>
+      <title>Redis 安装教程（单机、伪集群）</title>
+      <link>https://devnook.cn/archives/redis-install/</link>
+      <pubDate>Thu, 25 Nov 2021 18:08:43 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/redis-install/</guid>
+      <description>Redis 单机安装教程 # 安装wget工具 yum install wget # 安装gcc,c语言编译工具 yum install gcc # 创建soft,便于后期管理软件 mkdir soft wget http://download.redis.io/releases/redis-5.0.5.tar.gz tar xf redis-5.0.5.tar.gz # 重命名一下 mv redis-5.0.5 redis cd redis #可以读读readme.md,其实能读取到很多信息 #linux编译redis源码 make # 如果没有安装gcc,但是执行了make,构建了一次,需要清除一下编译环境 make disclean make cd src # 查看执行程序是否生成 #将redis 装在指定的目录 : /opt/redis make install PREFIX=/opt/redis # 将redis配置成全局可执行服务 vi /etc/profile export REDIS_HOME=/opt/redis export PATH=$PATH:$REDIS_HOME/bin # 刷新 profile文件,使其生效 source /etc/profile # 进入到你的redis文件夹的下的utils下 cd /soft/redis/utils # 准备配置你的Redis所在的端口 ./install_server.sh # 设置你的端口 6381 # 指定配置文件 /opt/redis/6381.</description>
+    </item>
+    
+    <item>
+      <title>Redis的持久化RDB 、AOF</title>
+      <link>https://devnook.cn/archives/redis-persistence/</link>
+      <pubDate>Thu, 25 Nov 2021 18:05:34 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/redis-persistence/</guid>
+      <description>Redis的持久化 Redis是基于内存的，必须要考虑的一个问题就是：当redis服务挂了之后，之前的数据怎么重新加载到内存？那么必须要考虑一种存放历史数据的解决方案。
+RDB：指定的时间间隔对数据进行快照存储。 假如开始拍快照时间为10：00，整个快照落库持久化完成大概需要5分钟，即10：05此次快照拍完。而在10：04的时候b被改成了5，那么在rdb生成的结果里b是存的4还是5呢？是的，用大腿想也能想到肯定是存的4，但是如果让你来着设计这个RDB持久化怎么去实现呢?
+A方案:使用一个进程阻塞系统,系统拍照的时候我不准用户改动数据，等我快照拍完了你再改。此路不通。 B方案:使用一个进程且不阻塞系统，继续让用户改数据，并同时将数据持久化落库，那就意味着一有数据改动就得重新拍照，那这个快照拍到什么时候能生成？此路不通。 C方案:派（fork）一个子进程去把10：00当时那个点的数据a先落库（bgsave），主进程继续为用户服务，当用户改了数据b时，触发copyonwrite 将b的原始引用拷贝给子进程，主线程里的b引用新指向内存里的5。 RDBsave参数配置
+save 900 1 # 每900s有1个key变化，时候生成RDB save 300 10 # 每300s有10个key变化，时候生成RDB save 60 10000 # 每60s有10000个key变化，时候生成RDB RDB的优点 适用于灾难恢复，也可以根据需求恢复到不同版本的数据集. 与AOF相比,在恢复大的数据集的时候，RDB方式会更快 最大化redis的性能，存RBB主进程只管fork子进程。 RDB的缺点 可能会丢失数据 虽然fork同步操作非常快，同步大数据量时，fork也会阻塞主进程 Redis AOF(append only file)持久化 1. 开启AOF，AOF 特点 ############################## APPEND ONLY MODE ############################### appendonly yes # 默认为no,redis默认是rdb模式； # aof 记录的文件名 appendfilename &amp;#34;appendonly.aof&amp;#34; #每次写入仅追加日志后进行Fsync。缓慢但安全的 # appendfsync always # Compromise（折中）方案，一秒追加一次。 appendfsync everysec # 由操作系统调度刷新输出缓冲区写入到aof文件 # appendfsync no 特点：
+记录的是数据操作流水，丢失数据少 4.0版本之后支持开启RDB+AOF，默认关闭，可以通过配置项 aof-use-rdb-preamble 开启） 2.</description>
+    </item>
+    
+    <item>
+      <title>基于Canal中间件同步MySQL数据到Elasticsearch（V7.6.2）</title>
+      <link>https://devnook.cn/archives/canal-mysql-es/</link>
+      <pubDate>Thu, 25 Nov 2021 17:59:44 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/canal-mysql-es/</guid>
+      <description>基于canal中间件同步MySQL数据到Elasticsearch（V7.6.2） 本文软件版本（不提版本都是耍流氓） OS: MacOS mysql(mac server): 8.0 canal: 1.1.5发布版 elasticsearch: 7.6.2 kibana: 7.6.2
+1.遇到的一些坑： adapter 订阅不到 mysql 的日志 mysql是否开启了binlog canal.adapter-1.1.5/lib 下默认是没有5.x的jar包 阿里云的RDS我实操时候是通过的，但是睡一觉起来，数据又订阅不到了，就放弃了 启动adapter时报：com.alibaba.druid.pool.DruidDataSource cannot be cast to com.alibaba.druid.pool.DruidDataSource 下载v1.1.5-alpha-2 版本下的client-adapter.es7x-1.1.5-SNAPSHOT-jar-with-dependencies.jar 替换原client-adapter.es7x-1.1.5-jar-with-dependencies.jar 不要信改ES配置 hosts: 127.0.0.1:9200 -&amp;gt; hosts: http://127.0.0.1:9200 改了会提示你 hostName not found! 2.撸起袖子开始干： 开启mysql binlog vi /etc/my.cnf # 新增如下配置 log-bin = mysql-bin #开启binlog binlog-format = ROW #选择row模式 server_id = 1 #配置mysql replication需要定义，不能和canal的slaveId重复 下载canal 下载canal.adapter-1.1.5、canal.deployer-1.1.5 （推荐一个油猴加速下载插件： Github 增强 - 高速下载） https://github.com/alibaba/canal/releases/tag/canal-1.1.5 配置canal服务端订阅mysql binlog canal.</description>
+    </item>
+    
+    <item>
+      <title>Redis的Pipline和事务</title>
+      <link>https://devnook.cn/archives/redis-pipline-tx/</link>
+      <pubDate>Thu, 25 Nov 2021 17:50:36 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/redis-pipline-tx/</guid>
+      <description>1.Redis 管道（Pipeline） 我们搬家的时候往往是大包小包。 此时，有两种方案可以选择：
+完全靠一己之力，一趟一趟的搬。 找个货运车，一趟就搬过去。 而Pipeline就是这个这个货运车，把你的一批命令一把送过去，然后告诉你结果。目的是节省你的网络开销（建立连接 关闭连接 再开再关，对于计算机而已都是需要开辟资源去处理的）。
+使用场景： 1.批处理、维护缓存数据
+在电商的场景中，我们可能会把商品的一些信息放到缓存，比如说：库存数据，比如说显示的商品价格，而前篇文章提到了： Redis中的List、Set、Hash实际使用场景 我们用Redis Hash存放购物车数据，购物车的商品信息存在hash的一个filed：info_productIdx里。当我们的商品价格在后台被改掉的时候：购物车显示给用户的价格肯定也得是最新的。
+2.Redis的发布发布订阅（Pub/Sub） 发布订阅，顾名思义，一个消息发布之后，已经预约了当前主题的订阅者都能收到通知。
+127.0.0.1:6379&amp;gt; PUBLISH testChannel &amp;#34;hello sub&amp;#34; # 返回2为订阅者的个数 (integer) 2 另外两个客户端订阅testChannel通道的消息，消息发布之后订阅者收到通知：
+SUBSCRIBE testChannel Reading messages... (press Ctrl-C to quit) 1) &amp;#34;subscribe&amp;#34; 2) &amp;#34;testChannel&amp;#34; 3) (integer) 1 1) &amp;#34;message&amp;#34; 2) &amp;#34;testChannel&amp;#34; 3) &amp;#34;hello sub&amp;#34; 1) &amp;#34;message&amp;#34; 订阅某个特定的前缀的通道：比如订阅下文中的所有秒杀活动开始的通知。
+SUBSCRIBE activity* 使用场景: 异步消息通知（like:活动预约提醒） 我们在京东/天猫订阅的秒杀活动预约通知，其实我们往Redis技术层面来思考，Redis轻而易举就能实现了。 假如活动ID为：666，活动key设置为：activity:666，活动未开始之前提供的那个【提醒我】，当按钮被点击之后，相当于用户订阅了通道key 为：SUBSCRIBE activity:666，而活动开始那一刻便是发布消息：PUBLISH activity:666 &amp;quot;IPhone 12 activiy start &amp;quot;，然后通过业务代码实现站内推送或者是短信的方式通知。 3.Redis事务 Redis事务相比MySQL，在Redis中，单条命令是原子性执行的，但事务不保证原子性，且没有回滚。事务中任意命令执行失败，其余的命令仍会被执行。
+# 开启事务： MULTI OK INCR foo QUEUED INCR bar QUEUED # 提交事务 EXEC # 提交结果，按提交命令顺序返回 1) (integer) 1 2) (integer) 1 Redis事务中的错误处理 使用事务时可能会遇上以下两种错误：</description>
+    </item>
+    
+    <item>
+      <title>Redis数据分片</title>
+      <link>https://devnook.cn/archives/redis-dataslice/</link>
+      <pubDate>Thu, 25 Nov 2021 17:38:16 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/redis-dataslice/</guid>
+      <description>一、再谈单节点的 Redis 存在的问题 单点故障 数据容量问题 连接数、请求压力问题 前文提及的主从+哨兵架构，解决了单点问题和请求压力问题，但是数据容量仍然是 1：1 的克隆数据，数据容量问题依旧存在，数据并没有分摊到各个节点。
+二、如何解决单点数据容量问题 A：基于客户端的方案 1.业务拆分数据 从业务的角度不同的模块按约定好的逻辑落入不同的Redis 节点。
+比如：评论业务用一个redis阶段，商品信息业务用另外一个节点，购物车用另外一个节点。
+2.通过Hash算法路由 2.1 Modula：将hash(ID)%redis节点数 弊端：redis节点数改变的话，数据就分配规则就被打破了。
+2.2 Random：随机分配 使用场景：消息队列。
+数据随机的落入到不同的节点，对于客户端而言无所谓数据落在那一台节点，只需要知道key就能拿到数据。
+2.3 Ketama：一致性Hash算法将数据分摊到不同的节点。 规划一个虚拟的环形节点，将节点和数据参与位置分配算法。
+优点：增加节点可以分担其他节点的压力，不会造成全局洗牌，原本的数据还在最初规划出的物理节点中。
+一致性Hash缺点:
+击穿的风险，原本数据是在a节点的，但是增加了节点导致后续的数据源从节点e获取，但是e又没有获取到数据，从而将请求打入到了数据库，从而可能导致击穿缓存拖垮数据的风险。 方案：当在计算出的离最近节点没有获取到的数据，尝试从离计算值最近的2个物理节点去去获取数据。
+数据倾斜 -&amp;gt; 缓存雪崩 假设：我们刚上线的时候Redis节点只有两台，而我的的数据的key是可能是基于某一个基准在往上做增长，那么就会导致数据大概倾斜的落在某一个节点，最极端的可能导致所有的请求都打在了这一个节点，从而拖垮此节点，从而引发缓存雪崩。
+方案：上述问题的关键点在于物理节点少，数据落点非黑即白，那么能否增加逻辑上的节点？只有两台物理节点，但是还有不同的端口啊，ok,那就在每个IP之后再添加随机的数字去生成逻辑节点。
+B：安排专人去充当数据路由的的角色 上述的解决方案中，我们把数据路由的逻辑架在了客户端，但是对于客户端而言，连接可以看成是几类数据直接怼在了服务端。这对于服务端而言连接的开销也是不小的。革命尚未成功，还需努力。
+租客谁都找房东去房东带看房子怎么能受得了对吧，那就找中介呗
+那么此时只要关注的就是这个中介proxy代理的性能。 那么是否有已经造好的Proxy轮子？
+推特开源的：twemproxy
+Predixy：一款高性能全特征redis代理
+C.Redis的Cluster 我们前面说的通过hash取模计算数据所属节点的方案中，缺陷在于增减节点需要对所有的数据rehash，再根据rehash的结果迁移数据。那么是否能够将数据预先规划？ 假设最初节点只有两个，要预先规划数据所属节点，先将数据预先规划为10槽位(slots)，在Redis Cluster里其实是分配了16384个slots，后续增加节点则直接从2个节点各自分一段范围的数据过来，雨露均沾嘛。然后分到的数据进行rehash，再数据迁移到新的节点。
+这样子的话，只要增加了节点。数据还是存在高频的rehash呀？而且假如要对两个相同类型的数据进行求交并补运算的话，redis也没办法做。好比两个物理库的mysql数据没办法inner join。
+对数据加标签（hash tag）而不是单纯的直接通过hash(key)，Redis不想被吐槽它不行呀。这个锅得用户自己背，你想要对这部分的数据做运算，做事务处理那么你就应该尽可能的将数据划分到一个物理机上。你自己给数据加tag,从而对同一个tag做hash运算的时候能保证在一个物理机上。
+每个节点存一份数据-节点映射关系表，比如redis1节点存放的是0，1，2的hash值对应的数据，redis1为5，6，7，此时用户请求获取key1,其hash值为3。
+此时将请求路由到了redis2/redis1节点，而这2个节点又不存储该数据。
+在redis2里获取到了key1的值hash值为3，拿了到映射表的关系，哦，数据在redis3，通知客户端去redis3获取。
+客户端去redis3获取数据。
+文章对你有帮助的话，动动小手点个赞或者留下你的评论，让我知道：我和你在并肩战斗。 我是山海哥，余生山海远，你我一起卷。</description>
+    </item>
+    
+    <item>
+      <title>Redis中的String类型及其使用场景</title>
+      <link>https://devnook.cn/archives/redis-string/</link>
+      <pubDate>Thu, 25 Nov 2021 17:30:01 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/redis-string/</guid>
+      <description>1.先谈为什么Redis 既然已经有了 MySQL 数据库为什么还研发出 Redis 这种 key-value 内存数据库，或者为什么不直接存储在.txt/.log这种文件里？Redis 的出现为我们解决了什么问题？
+解决磁盘的 IO 瓶颈 存放在 txt/log、MySQL 的数据最终存放是在磁盘的，磁盘寻址耗时是毫秒(ms)级别的。 磁盘存放的数据，一次查询能查询出来的数据大小受带宽（单位时间内能传递的文件大小）的影响。 而内存的寻址是纳秒（ns）级别的。相比磁盘寻址快了十万倍。 画外音1：为什么要MySQL使用索引？
+画外音2：为什么Redis是单线程的？
+2.String类型的数据存储 我们在使用 Redis 时候经常会用到对于某个 key 的 value 值进行自增，但是为什么 Redis 里面却没有 int 类型呢？
+Redis 的存放的是字节数据，数据是类型是根据 encoding 编码获取的。 执行set testkey 99时 redis 会先判断这个 testkey 的 encoding 类型，判断出是个 int,下次 incr 的时候，就能感知到这个 testkey 对应的 value 是 int 类型。
+# 查看testkey对应的value的编码类型，返回int OBJECT encoding testkey 当我们存储的是 123 时，实际数据类型为 Int 当我们存储的是 abc 字符串时，实际数据类型是 embstr 当字符串很长（长度大于 44）时，实际数据类型为 raw 那么是否长度超过44为的数字：例如：99&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title>Redis中的List、Set、ZSet、Hash实际使用场景</title>
+      <link>https://devnook.cn/archives/redis-data-type/</link>
+      <pubDate>Thu, 25 Nov 2021 16:01:54 +0000</pubDate>
+      
+      <guid>https://devnook.cn/archives/redis-data-type/</guid>
+      <description>List 结构 常见的操作： LRANGE : LRANGE key start stop # 从头到尾取出key为：testlist 的元素 LRANGE testlist 0 -1 LPUSH : LPUSH key element [element ...] 从上个元素左侧添加元素,或者说从头部添加。 LPUSH testlist 1 2 3 4 # 这里容易理解成摆放顺序为 1 2 3 4，实则不然。 LRANGE testlist 0 -1 1) &amp;#34;4&amp;#34; 2) &amp;#34;3&amp;#34; 3) &amp;#34;2&amp;#34; 4) &amp;#34;1&amp;#34; LPOP：LPOP key 从集合的最左侧弹出一个元素。
+LTRIM：LTRIM key start stop，截取元素，类似 java List 的 subList(),截取的下标包前不包后。
+LLEN：LLEN key 获取 list 元素个数。
+LREM：LREM key count element删除 count 个 element 元素。当 count 为负数，从后往前删指定的 |count| 个元素</description>
     </item>
     
     <item>
       <title></title>
-      <link>/1/01/</link>
+      <link>https://devnook.cn/%E5%8D%9A%E5%AE%A2/test/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/1/01/</guid>
-      <description></description>
+      <guid>https://devnook.cn/%E5%8D%9A%E5%AE%A2/test/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/</guid>
+      <description>线程数量增长问题： 在BIO模型中，每个客户端连接都需要一个独立的线程来处理，即使客户端没有实际的IO操作。当有大量客户端连接时
+线程数量增长问题： 在BIO模型中，每个客户端连接都需要一个独立的线程来处理，即使客户端没有实际的IO操作。当有大量客户端连接时</description>
     </item>
     
   </channel>

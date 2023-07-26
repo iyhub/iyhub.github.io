@@ -1,21 +1,7 @@
 baseURL: https://iyhub.github.io/
 languageCode: zh-cn
 title: DEV Nook
-pluralizeListTitles: false
-pygmentsUseClasses: true
-pygmentsCodeFences: true
-disablePathToLower: true
-enableRobotsTXT: true
-geekdocFileTreeSortBy: title
-geekdocMenuBundle: false
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-  tableOfContents:
-    startLevel: 1
-    endLevel: 9
-taxonomies:
-  tag: tags
-copyright: 'DEV Nook © 2020 All rights reserved.'
-license: 'MIT License'
+description: "DEV Nook is a blog about programming, software development and engineering."
+author: "阿歪"
+
+

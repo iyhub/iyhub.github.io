@@ -1,13 +1,123 @@
 theme: 'geekdoc'
-params:
-  AuthorName: Jon Doe
-  GitHubUser: spf13
-  ListOfFoo:
-    - foo1
-    - foo2
-  SidebarRecentLimit: 5
-  Subtitle: Hugo is Absurdly Fast!
-permalinks:
-  posts: /:year/:month/:title/
-title: DEV Nook
+title: "DEV Nook"
+baseURL: https://devnook.cn/
+#标题自动+s
+pluralizeListTitles: false
+# 以下是可选配置，根据需要设置
+# 代码块的显示设置
+pygmentsUseClasses: true
+pygmentsCodeFences: true
 
+# 禁用路径转小写
+disablePathToLower: true
+
+# 启用Git信息
+enableGitInfo: true
+
+# 启用robots.txt模板渲染
+enableRobotsTXT: true
+
+markup:
+  goldmark:
+    # 用于mermaid短代码
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 1
+    endLevel: 9
+
+taxonomies:
+  tag: tags
+
+params:
+  # (可选，默认为6) 设置在页面上显示的目录层级数。
+  # 使用false来隐藏目录，注意0将默认为6 (https://gohugo.io/functions/default/)
+  # 你也可以在Front Matter中为每个页面单独设置此参数。
+  geekdocToC: 3
+
+  # (可选，默认为static/brand.svg) 设置Geekdoc的logo路径，
+  # 相对于你的'static/'文件夹。
+  geekdocLogo: favicon.svg
+
+  # (可选，默认为false) 从'data/menu/main.yml'数据文件中渲染菜单。
+  # 详见 https://geekdocs.de/usage/menus/#bundle-menu。
+  geekdocMenuBundle: false
+
+  # (可选，默认为false) 折叠所有菜单项，如果启用则无法在每个页面上覆盖。
+  # 可以通过'geekdocCollapseSection'在每个页面上启用。
+  geekdocCollapseAllSections: true
+
+  # (可选，默认为true) 在每个文档页面底部显示页面导航链接（仅适用于bundle菜单）。
+  geekdocNextPrev: false
+
+  # (可选，默认为true) 在每个文档页面顶部显示面包屑导航栏。
+  # 你也可以在Front Matter中为每个页面单独设置此参数。
+  geekdocBreadcrumb: false
+
+  # (可选，默认为none) 设置源代码库位置。用于'Edit page'链接。
+  # 你也可以在Front Matter中为每个页面单独设置此参数。
+#  geekdocRepo: "https://github.com/thegeeklab/hugo-geekdoc"
+
+  # (可选，默认为none) 启用'Edit page'链接。需要'geekdocRepo'参数，
+  # 并且路径必须指向'content'文件夹的上级目录。
+  # 你也可以在Front Matter中为每个页面单独设置此参数。
+  geekdocEditPath: edit/main/exampleSite
+
+  # (可选，默认为true) 启用flexsearch的搜索功能。
+  # 索引是即时生成的，可能会减慢网站速度。
+  geekdocSearch: false
+
+  # (可选，默认为false) 在搜索结果中显示父文件夹作为前缀。此
+  # 选项允许你区分不同文件夹中相同名称的文件。
+  # 注意：此参数仅在'geekdocSearch: true'时适用。
+  geekdocSearchShowParent: true
+
+  # (可选，默认为none) 在网站页脚中添加链接到你的法律声明页面。
+  # 可以是远程URL或相对于你的内容目录的本地文件路径。
+  geekdocLegalNotice: "https://blog.example.com/legal"
+
+  # (可选，默认为none) 在网站页脚中添加链接到你的隐私政策页面。
+  # 可以是远程URL或相对于你的内容目录的本地文件路径。
+  geekdocPrivacyPolicy: "/privacy"
+
+  # (可选，默认为true) 添加锚链接到标题。
+  geekdocAnchor: true
+
+  # (可选，默认为true) 点击时将锚链接复制到剪贴板。
+  geekdocAnchorCopy: true
+
+  # (可选，默认为true) 为由'img'短代码渲染的图片启用或禁用图片惰性加载。
+  geekdocImageLazyLoading: true
+
+  # (可选，默认为false) 如果启用，则将HTML <基础> 设置为.Site.BaseURL。在使用Hugo BaseURL
+  # 的子目录时可能需要此设置。
+  # 详见 https://developer.mozilla.org/de/docs/Web/HTML/Element/base。
+  geekdocOverwriteHTMLBase: false
+
+  # (可选，默认为true) 启用或禁用基于JavaScript的颜色主题切换开关。CSS
+  # 用户首选模式仍然有效。
+  geekdocDarkModeToggle: true
+
+  # (可选，默认为false) 在使用暗模式时自动降低图像亮度并稍微灰度化，
+  # 以避免亮点。
+  geekdocDarkModeDim: true
+
+  # (可选，默认为false) 强制代码块始终使用暗色主题。
+  geekdocDarkModeCode: true
+
+  # (可选，默认为true) 在网站页脚中显示一个"回到顶部"链接。
+  geekdocBackToTop: true
+
+  # (可选，默认为false) 启用或禁用将文章页面的标签自动添加到导航侧边栏中。
+  geekdocTagsToMenu: false
+
+  # (可选，默认为'title') 配置如何对文件树菜单条目进行排序。可能的选项包括'title'、'linktitle'、
+  # 'date'、'publishdate'、'expirydate'或'lastmod'。每个选项也可以使用反向修饰符，
+  # 例如'title_reverse'。
+  geekdocFileTreeSortBy: "publishdate"
+
+  # (可选，默认为none) 添加"内容受 <license>"行到页脚。
+  # 如果你希望为你的内容定义一个默认许可证，可以使用此参数。
+  geekdocContentLicense:
+    name: "CC BY-SA 4.0"
+    link: "https://creativecommons.org/licenses/by-sa/4.0/"

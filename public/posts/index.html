@@ -38,7 +38,7 @@
   />
   <meta property="og:site_name" content="DEV Nook" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/posts/" />
+<meta property="og:url" content="https://devnook.cn/posts/" />
 
 
 
@@ -111,7 +111,7 @@
   href="/custom.css"
   media="all"
 />
-  <link href="/posts/" rel="canonical" type="text/html" />
+  <link href="https://devnook.cn/posts/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -128,7 +128,7 @@
 
 
     <div
-      class="wrapper "
+      class="wrapper dark-mode-dim"
     >
       <input type="checkbox" class="hidden" id="menu-control" />
       <input type="checkbox" class="hidden" id="menu-header-control" />
@@ -148,11 +148,11 @@
       </label>
     
     <div>
-      <a class="gdoc-brand gdoc-header__link" href="">
+      <a class="gdoc-brand gdoc-header__link" href="https://devnook.cn/">
         <span class="flex align-center">
           <img
             class="gdoc-brand__img"
-            src="/brand.svg"
+            src="/favicon.svg"
             alt=""
           />
           <span class="gdoc-brand__title">DEV Nook</span>
@@ -180,7 +180,7 @@
         </span>
 
         <span class="gdoc-menu-header__home">
-          <a href="" class="gdoc-header__link">
+          <a href="https://devnook.cn/" class="gdoc-header__link">
             <svg class="gdoc-icon gdoc_home">
               <title>返回首页</title>
               <use xlink:href="#gdoc_home"></use>
@@ -218,21 +218,6 @@
           <aside class="gdoc-nav">
             <nav>
   
-  <div class="gdoc-search flex align-center">
-    <svg class="gdoc-icon gdoc_search"><use xlink:href="#gdoc_search"></use></svg>
-    <input
-      type="text"
-      id="gdoc-search-input"
-      class="gdoc-search__input"
-      placeholder="搜索..."
-      aria-label="搜索"
-      maxlength="64"
-      data-site-base-url=""
-      data-site-lang="en"
-    />
-    <ul id="gdoc-search-results" class="gdoc-search__list"></ul>
-  </div>
-
 
 
 
@@ -267,15 +252,25 @@
             <input
               type="checkbox"
               
-                class="hidden"
+                class="gdoc-nav__toggle" id="navtree-1ce81c14"
+                checked
               
             />
             <label
+              
+                for="navtree-1ce81c14" class="flex justify-between align-center"
               
             >
               
                 <span class="flex">Posts</span>
               
+              
+                <svg class="gdoc-icon toggle gdoc_keyboard_arrow_left">
+                  <use xlink:href="#gdoc_keyboard_arrow_left"></use>
+                </svg>
+                <svg class="gdoc-icon toggle gdoc_keyboard_arrow_down">
+                  <use xlink:href="#gdoc_keyboard_arrow_down"></use>
+                </svg>
               
             </label>
 
@@ -316,7 +311,7 @@
               
                 <span class="flex">
                   <a
-                    href="/1/01/"
+                    href="/posts/Test/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/"
                     class="gdoc-nav__entry"
                   >
                     图片测试
@@ -352,7 +347,7 @@
               
                 <span class="flex">
                   <a
-                    href="/2022/11/netty%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+                    href="/posts/Netty/netty/"
                     class="gdoc-nav__entry"
                   >
                     Netty学习笔记
@@ -385,6 +380,36 @@
   </section>
 
   
+    <section class="gdoc-nav--tags">
+      <h2>标签</h2>
+      <ul class="gdoc-nav__list">
+        
+        
+          
+            <li>
+              <a
+                class="gdoc-nav__entry"
+                href="/tags/NIO/"
+              >
+                NIO
+              </a>
+            </li>
+          
+        
+          
+            <li>
+              <a
+                class="gdoc-nav__entry"
+                href="/tags/Netty/"
+              >
+                Netty
+              </a>
+            </li>
+          
+        
+      </ul>
+    </section>
+  
 
 
   <section class="gdoc-nav--more">
@@ -402,7 +427,7 @@
     <article class="gdoc-markdown gdoc-post">
       <header class="gdoc-post__header">
         <h1 class="gdoc-post__title">
-          <a href="/2022/11/netty%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Netty学习笔记</a>
+          <a href="/posts/Netty/netty/">Netty学习笔记</a>
         </h1>
       </header>
       <section>
@@ -424,7 +449,7 @@
           <a
             class="flex-inline align-center fake-link"
             title="阅读全文"
-            href="/2022/11/netty%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+            href="/posts/Netty/netty/"
           >
             阅读全文
             <i class="gdoc-icon">gdoc_arrow_right_alt</i>
@@ -451,6 +476,49 @@
 
 
 
+  
+    
+    
+      
+        <span class="flex align-center no-wrap">
+          <svg class="gdoc-icon gdoc_bookmark"><use xlink:href="#gdoc_bookmark"></use></svg>
+          
+  <span class="gdoc-post__tag gdoc-button gdoc-button--regular">
+    <a
+      class="gdoc-button__link"
+      href="/tags/Netty/"
+      title="所有带有“Netty”标签的帖子。"
+    >
+      Netty
+    </a>
+  </span>
+
+        </span>
+      
+    
+    
+  
+    
+    
+      
+        <span class="flex align-center">
+          
+  <span class="gdoc-post__tag gdoc-button gdoc-button--regular">
+    <a
+      class="gdoc-button__link"
+      href="/tags/NIO/"
+      title="所有带有“NIO”标签的帖子。"
+    >
+      NIO
+    </a>
+  </span>
+
+        </span>
+      
+    
+    
+  
+
 
 
 
@@ -461,7 +529,7 @@
     <article class="gdoc-markdown gdoc-post">
       <header class="gdoc-post__header">
         <h1 class="gdoc-post__title">
-          <a href="/1/01/">图片测试</a>
+          <a href="/posts/Test/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/">图片测试</a>
         </h1>
       </header>
       <section>
@@ -546,8 +614,28 @@
           Here is DEV  Nook
         </span>
         
+          <span class="gdoc-footer__item gdoc-footer__item--row">
+            <a href="https://blog.example.com/legal" class="gdoc-footer__link">
+              法律声明
+            </a>
+          </span>
+        
+        
+          <span class="gdoc-footer__item gdoc-footer__item--row">
+            <a href="/privacy" class="gdoc-footer__link">
+              隐私政策
+            </a>
+          </span>
         
       </section>
+      
+        <section class="flex flex-wrap align-center">
+          <span class="gdoc-footer__item">
+            内容许可证
+
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="gdoc-footer__link no-wrap">CC BY-SA 4.0</a>
+          </span>
+        </section>
       
     </div>
     
@@ -568,7 +656,6 @@
     </div>
 
     
-  <script defer src="/js/search-83320133.bundle.min.js"></script>
 
   </body>
 </html>

@@ -2,7 +2,9 @@
 title: "Netty学习笔记"
 date: 2022-11-20T09:03:20-08:00
 draft: false
-sidebar: "This is the sidebar content for the article."
+tags: ["Netty","NIO"]
+description: "什么是BIO/NIO,如何理解NIO模型?"
+summary: "什么是BIO/NIO,如何理解NIO模型"
 ---
 ## 一.Netty是什么
 

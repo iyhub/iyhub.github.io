@@ -1,0 +1,10 @@
+---
+#右侧更多菜单
+more:
+  - name: News
+    ref: "/#"
+    icon: "gdoc_notification"
+  - name: "View Docs"
+    ref: "https://geekdocs.de/usage/menus/"
+    external: true
+    icon: "gdoc_github"

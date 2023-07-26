@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on DEV Nook</title>
-    <link>/posts/</link>
+    <link>https://devnook.cn/posts/</link>
     <description>Recent content in Posts on DEV Nook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 20 Nov 2022 09:03:20 -0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 09:03:20 -0800</lastBuildDate><atom:link href="https://devnook.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Netty学习笔记</title>
-      <link>/2022/11/netty%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://devnook.cn/posts/Netty/netty/</link>
       <pubDate>Sun, 20 Nov 2022 09:03:20 -0800</pubDate>
       
-      <guid>/2022/11/netty%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://devnook.cn/posts/Netty/netty/</guid>
       <description>一.Netty是什么 1.NIO模型的引入 O模型（阻塞IO）：就像在餐厅取餐时，需要等待食物做好才能取餐，期间你不能离开窗口，需要一直等待询询问窗口是否出餐。 NIO模型（非阻塞IO）：就像在餐厅取餐时，使用号码排队系统，你可以去做其他事情，而不必一直等待食物做好，当餐台出餐会以系统通知的形式告诉你出餐。 BIO模型的明显弊端:
 让我们用一家快递公司的场景来说明BIO:
 在这个场景中，你可以把快递公司看作是服务器，每个顾客则是一个客户端连接。当顾客到达快递公司时，他们需要办理寄送快递的手续，而快递公司需要为每个顾客分配一个专门的快递员来处理他们的快递业务。
@@ -28,10 +28,10 @@
     
     <item>
       <title></title>
-      <link>/1/01/</link>
+      <link>https://devnook.cn/posts/Test/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/1/01/</guid>
+      <guid>https://devnook.cn/posts/Test/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/</guid>
       <description></description>
     </item>
     
