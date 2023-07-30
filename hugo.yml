@@ -37,7 +37,7 @@ params:
 
   # (可选，默认为static/brand.svg) 设置Geekdoc的logo路径，
   # 相对于你的'static/'文件夹。
-  geekdocLogo: favicon.svg
+  geekdocLogo: devNook.png
 
   # (可选，默认为false) 从'data/menu/main.yml'数据文件中渲染菜单。
   # 详见 https://geekdocs.de/usage/menus/#bundle-menu。
